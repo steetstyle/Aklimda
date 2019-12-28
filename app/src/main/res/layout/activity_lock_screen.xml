@@ -25,20 +25,22 @@
         android:textSize="30dp"
         />
 
-        <ImageView
-            android:layout_below="@id/tv_time"
-            android:id="@+id/categoryImageView"
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/category"
-            android:transitionName="categoryImageQuestionTransition"
 
-            />
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        android:id="@+id/categoryImageView"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/category"
+        android:transitionName="categoryImageQuestionTransition"/>
 
         <LinearLayout
             android:layout_below="@id/categoryImageView"
@@ -87,7 +89,7 @@
             android:textColor="@color/white"
             android:layout_marginTop="8dp"
             android:maxHeight="150dp"
-            android:text="Cevabı öğrenmek için  lütfen soru kartına dokunun"
+            android:text="Detaylı bakmak için lütfen bilgi kartına dokunun"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,11 +110,11 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:id="@+id/iv_locker"
+            android:id="@+id/iv_key"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/lock"
-            android:layout_marginLeft="50dp"/>
+            android:src="@drawable/key"
+            android:layout_marginRight="50dp"/>
         <TextView
             android:textSize="10dp"
             android:layout_margin="15dp"
@@ -121,12 +123,7 @@
             android:layout_height="wrap_content"
             android:text="@string/tv_tip"
             android:textColor="@color/white"/>
-        <ImageView
-            android:id="@+id/iv_key"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/key"
-            android:layout_marginRight="50dp"/>
+
     </LinearLayout>
 
 

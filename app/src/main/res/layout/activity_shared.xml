@@ -9,23 +9,58 @@
     android:padding="16dp"
     android:orientation="vertical"
     android:transitionName="containerTransition"
+    android:background="@color/white"
     >
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
         android:id="@+id/categoryImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:background="@color/flatblue"
         android:src="@drawable/category"
-        android:transitionName="categoryImageQuestionTransition"
+        android:transitionName="categoryImageQuestionTransition"/>
 
-        />
+
+    <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
+        android:id="@+id/uminyayestidea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:tbgCheckedButton="@+id/uminyanyetidea"
+        app:tbgFlow="false"
+        app:tbgChildSpacing="auto"
+        app:tbgChildSpacingForLastRow="align"
+        app:tbgRowSpacing="8dp">
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/uminyanyetidea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fikrim Yok"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/yaniznayu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bilmiyorum"/>
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/yaznayu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Öğrendim"
+            />
+
+    </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
+
 
     <LinearLayout
         android:layout_below="@id/categoryImageView"
@@ -67,42 +102,54 @@
             />
     </LinearLayout>
    <LinearLayout
-       android:layout_alignParentBottom="true"
-       android:layout_width="match_parent"
-       android:layout_height="50dp"
-       >
-       <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
-           android:id="@+id/uminyayestidea"
+            android:layout_above="@+id/sliderContainer"
            android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           app:tbgCheckedButton="@+id/uminyanyetidea"
-           app:tbgFlow="true"
-           app:tbgChildSpacing="auto"
-           app:tbgChildSpacingForLastRow="align"
-           app:tbgRowSpacing="8dp">
+           android:layout_height="40dp"
+       android:layout_gravity="center_horizontal"
+       android:orientation="horizontal">
 
-           <com.nex3z.togglebuttongroup.button.CircularToggle
-               android:id="@+id/uminyanyetidea"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Fikrim Yok"/>
 
-           <com.nex3z.togglebuttongroup.button.CircularToggle
-               android:id="@+id/yaniznayu"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Bilmiyorum"/>
-
-           <com.nex3z.togglebuttongroup.button.CircularToggle
-               android:id="@+id/yaznayu"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Öğrendim"
-               />
-
-       </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
 
    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sliderContainer"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <com.ncorti.slidetoact.SlideToActView
+            android:id="@+id/asd22"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:area_margin="4dp"
+            app:border_radius="2dp"
+            app:inner_color="@color/red"
+            app:outer_color="@color/white"
+            app:slider_height="50dp"
+            app:slider_locked="false"
+            app:text="Çıkış"
+            app:text_size="12sp" />
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"/>
+
+        <com.ncorti.slidetoact.SlideToActView
+            android:id="@+id/asd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:padding="15dp"
+            app:area_margin="4dp"
+            app:border_radius="2dp"
+            app:inner_color="@color/grey"
+            app:outer_color="@color/green"
+            app:slider_height="50dp"
+            app:slider_locked="false"
+            app:text="Devam et"
+            app:text_size="12sp" />
+    </LinearLayout>
 
 
 </RelativeLayout>
