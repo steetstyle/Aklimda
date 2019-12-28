@@ -1,10 +1,10 @@
 ## Android-Aklimda ##
 
 
-![image](https://github.com/aspook/Android-LockScreen/raw/master/screenshot/aklimda_icon.jpg)
+![image](https://github.com/steetstyle/Aklimda/tree/master/screenshot/aklimda_icon.jpg)
 
 	AKLIMDA
 
- ![image](https://github.com/aspook/Android-LockScreen/raw/master/screenshot/aklimda_ideascreen.jpg)
+ ![image](https://github.com/steetstyle/Aklimda/tree/master/screenshot/aklimda_ideascreen.png)
 
 # Aklimda
