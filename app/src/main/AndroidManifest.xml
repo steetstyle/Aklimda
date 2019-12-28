@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.geed.lockscreen">
+
+    <uses-sdk android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission-sdk-23 android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-permission-sdk-23 android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-permission android:name="your.package.name.permission.MAPS_RECEIVE" />
+
+    <uses-permission-sdk-23 android:name="your.package.name.permission.MAPS_RECEIVE" /> <!-- The following two permissions are required for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name=" android.permission.ACCESS_WIMAX_STATE" />
+    <uses-permission android:name=" android.permission.BLUETOOTH" />
+    <uses-permission android:name=" android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name=" android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name=" android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name=" android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name=" android.permission.CHANGE_WIMAX_STATE" />
+    <uses-permission android:name=" android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name=" android.permission.FLASHLIGHT" />
+    <uses-permission android:name=" android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name=" android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name=" android.permission.INTERNET" />
+    <uses-permission android:name=" android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name=" android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name=" android.permission.NFC" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name=" android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name=" android.permission.SUBSCRIBED_FEEDS_READ" />
+    <uses-permission android:name=" android.permission.TRANSMIT_IR" />
+    <uses-permission android:name=" android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name=" android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" /> <!-- Permissions required for GCM -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SharedActivity"></activity>
+        <activity android:name="me.geed.dashboard.DashboardActivity" />
+        <activity android:name="me.geed.intro.IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LaunchActivity" />
+
+        <service android:name=".LockScreenService" />
+
+        <activity
+            android:name=".LauncherHomeActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LockScreenActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.lockscreen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

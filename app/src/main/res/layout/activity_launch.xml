@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/new_build_resize_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:backgroundTint="@color/flatblue"
+    >
+
+
+    <Button
+        android:id="@+id/btn_start_lock_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Uygulamayı başlat">
+    </Button>
+
+
+
+
+
+
+
+</LinearLayout>
