@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 
-import androidx.annotation.Nullable;
-
 /**
  * Lock Screen Service
  *
@@ -16,7 +14,10 @@ import androidx.annotation.Nullable;
 public class LockScreenService extends Service {
     private BroadcastReceiver mReceiver;
 
-
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
 
     @Override
     public void onCreate() {
@@ -36,11 +37,5 @@ public class LockScreenService extends Service {
         super.onDestroy();
 
         unregisterReceiver(mReceiver);
-    }
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
     }
 }

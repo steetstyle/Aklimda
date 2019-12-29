@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:1:1-7:12
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:2:5-63
+application
+ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml:5:5-19
+uses-sdk
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		ADDED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml
+		INJECTED from /home/roy/Desktop/uygulamamki/yeni/Android-LockScreen-master/subProjects/togglebuttongroup/src/main/AndroidManifest.xml

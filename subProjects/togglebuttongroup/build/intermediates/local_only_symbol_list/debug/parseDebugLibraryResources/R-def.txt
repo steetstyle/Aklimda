@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+attr? tbgCheckedButton
+attr? tbgChildSpacing
+attr? tbgChildSpacingForLastRow
+attr? tbgFlow
+attr? tbgMarkerColor
+attr? tbgMaxSelect
+attr? tbgRadioStyle
+attr? tbgRowSpacing
+attr? tbgRtl
+color selector_marker_text
+color tbg_color_default_marker
+drawable bg_circle
+drawable bg_label_checked
+drawable bg_label_unchecked
+id align
+id auto
+id iv_bg
+id tv_text
+layout view_label_button
+layout view_marker_button
+styleable FlowLayout tbgFlow tbgChildSpacing tbgChildSpacingForLastRow tbgRowSpacing tbgRtl
+styleable MarkerButton android:text android:textColor android:textSize tbgMarkerColor tbgRadioStyle
+styleable MultiSelectToggleGroup tbgMaxSelect
+styleable ToggleButtonGroup android:checkedButton tbgCheckedButton

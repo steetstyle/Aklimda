@@ -18,10 +18,13 @@
 
     <color name="background">#3087E9</color>
     <color name="white">#FFFFFF</color>
+    <color name="green">#50d890</color>
+    <color name="grey">#FFFFFF</color>
+    <color name="red">#fa4252</color>
     <color name="black">#000000</color>
-    <color name="green">#c7f0db</color>
-    <color name="grey">#6c7b95</color>
-    <color name="red">#fa163f</color>
-    <color name="flatblue">#2f3640</color>
+    <color name="open_blue">#3FC5F0</color>
+    <color name="open_blue2">#46b3e6</color>
+    <color name="flatblue2">#b2dffb</color>
+    <color name="flatblue">#273c75</color>
 </resources>
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tbg_color_default_marker">#3799f4</color>
+    <declare-styleable name="FlowLayout">
+        <attr format="boolean" name="tbgFlow"/>
+        <attr format="enum|dimension" name="tbgChildSpacing">
+            <enum name="auto" value="-65536"/>
+        </attr>
+        <attr format="enum|dimension" name="tbgChildSpacingForLastRow">
+            <enum name="auto" value="-65536"/>
+            <enum name="align" value="-65537"/>
+        </attr>
+        <attr format="enum|dimension" name="tbgRowSpacing">
+            <enum name="auto" value="-65536"/>
+        </attr>
+        <attr format="boolean" name="tbgRtl"/>
+    </declare-styleable>
+    <declare-styleable name="MarkerButton">
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr format="color" name="tbgMarkerColor"/>
+        <attr format="boolean" name="tbgRadioStyle"/>
+    </declare-styleable>
+    <declare-styleable name="MultiSelectToggleGroup">
+        <attr format="integer" name="tbgMaxSelect"/>
+    </declare-styleable>
+    <declare-styleable name="ToggleButtonGroup">
+        <attr name="android:checkedButton"/>
+        <attr format="reference" name="tbgCheckedButton"/>
+    </declare-styleable>
+</resources>

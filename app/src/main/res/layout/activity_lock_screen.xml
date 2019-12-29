@@ -19,33 +19,51 @@
         android:id="@+id/tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="50dp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="40dp"
         />
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"
-        android:id="@+id/categoryImageView"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
+
+    <io.saeid.fabloading.LoadingView
+        android:id="@+id/loading_view"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:transitionName="categoryImageQuestionTransition"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="25dp"
+        app:mfl_onclickLoading="true"
+        app:mfl_duration="200"
+        app:mfl_repeat="1"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/category"
-        android:transitionName="categoryImageQuestionTransition"/>
+        />
+        <TextView
+            android:layout_below="@id/loading_view"
+            android:id="@+id/category_tip"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:text="@string/cat_tip"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="questionTitleTransition"
+            />
 
         <LinearLayout
-            android:layout_below="@id/categoryImageView"
+            android:layout_below="@id/category_tip"
             android:id="@+id/categoryInfoContainer"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -89,14 +107,14 @@
             android:textColor="@color/white"
             android:layout_marginTop="8dp"
             android:maxHeight="150dp"
-            android:text="Detaylı bakmak için lütfen bilgi kartına dokunun"
+            android:text="Cevabı öğrenmek için  lütfen soru kartına dokunun"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_below="@id/categoryInfoContainer"
-            android:textSize="10dp"
+            android:textSize="13dp"
             />
 
     <LinearLayout
@@ -110,19 +128,36 @@
         android:layout_gravity="center">
 
         <ImageView
+            android:id="@+id/left_key"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/leftarrow"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="50dp"/>
+
+        <com.ncorti.slidetoact.SlideToActView
             android:id="@+id/iv_key"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/key"
-            android:layout_marginRight="50dp"/>
-        <TextView
-            android:textSize="10dp"
-            android:layout_margin="15dp"
-            android:gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_tip"
-            android:textColor="@color/white"/>
+            android:layout_height="50dp"
+            android:elevation="0dp"
+            app:area_margin="5dp"
+            app:outer_color="@color/white"
+            app:inner_color="@color/open_blue"
+            app:border_radius="50dp"
+            app:text="Kilidi Aç"
+            app:text_size="17sp"
+            app:slider_height="50dp"
+            app:slider_locked="false"
+            android:layout_marginHorizontal="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/right_key"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/rightarrow"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="50dp"/>
 
     </LinearLayout>
 
