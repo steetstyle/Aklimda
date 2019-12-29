@@ -311,7 +311,7 @@ public class LockScreenActivity extends Activity {
         mainContainer.setBackgroundColor(backgroudColor);
 
         questionTitleText.setText(question.getTitle());
-        questionDescriptionText.setText(question.getDescription());
+        questionDescriptionText.setText(question.getShortDescription());
 
         insideContainer = findViewById(R.id.insideContainer);
         categoryImageViewInside = findViewById(R.id.categoryImageViewInside);

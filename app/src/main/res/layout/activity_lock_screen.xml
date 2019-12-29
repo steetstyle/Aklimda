@@ -84,7 +84,7 @@
                     <LinearLayout
                         android:id="@+id/categoryInfoContainer"
                         android:layout_width="match_parent"
-                        android:minHeight="75dp"
+                        android:minHeight="200dp"
                         android:layout_height="match_parent"
 
                         android:orientation="vertical">
@@ -246,40 +246,53 @@
             android:id="@+id/infoContainer"
             android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp"
             android:background="@drawable/roundededge"
             >
-            <TextView
-                android:id="@+id/questionTitleTextInside"
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="Yükleniyor"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:transitionName="questionTitleTransition"
-                />
-            <TextView
-                android:id="@+id/questionDescriptionTextInside"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_marginTop="8dp"
-                android:text="Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1900 ' ler ..."
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:transitionName="questionDescriptionTransition"
-                />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/questionTitleTextInside"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="Yükleniyor"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:transitionName="questionTitleTransition"
+                            />
+                        <TextView
+                            android:id="@+id/questionDescriptionTextInside"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="8dp"
+                            android:text="Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1900 ' ler ..."
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:transitionName="questionDescriptionTransition"
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+                    </LinearLayout>
+                </ScrollView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_above="@+id/sliderContainer"
             android:layout_width="match_parent"
@@ -290,6 +303,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:background="@color/white"
             android:id="@+id/sliderContainer"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
