@@ -10,7 +10,10 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -21,7 +24,11 @@ import androidx.core.util.Pair;
 
 import com.ncorti.slidetoact.SlideToActView;
 
+import java.util.Random;
+
 import io.saeid.fabloading.LoadingView;
+import me.geed.models.Question;
+import me.geed.util.QuestionInitializer;
 import me.geed.util.TimeUtil;
 
 
@@ -47,6 +54,9 @@ public class LockScreenActivity extends Activity {
     public static boolean isLocked = false;
 
 
+    // Outside container
+
+
     private  RelativeLayout mainContainer;
 
     private LinearLayout categoryInfoContainer;
@@ -56,6 +66,46 @@ public class LockScreenActivity extends Activity {
     private TextView questionTitleText;
 
     private TextView questionDescriptionText;
+
+    //Inside Container
+
+    private Animation from_unvisible;
+
+    private Animation from_visible;
+
+    private  RelativeLayout insideContainer;
+
+    private LinearLayout categoryInfoContainerInside;
+
+    private ImageView categoryImageViewInside;
+
+    private TextView questionTitleTextInside;
+
+    private TextView questionDescriptionTextInside;
+
+    private SlideToActView insideExitSlideAction_key;
+
+    private SlideToActView insideContinueSlideAction_key;
+
+
+    // Question Buttons
+
+    private ImageView left_key;
+
+    private ImageView right_key;
+
+
+    // Default Background Colors
+
+    private String [] colours = {
+            "#3498db",
+            "#e74c3c",
+            "#1abc9c",
+            "#34495e",
+            "#53bbb4",
+    };
+
+
 
 
     /**
@@ -71,9 +121,11 @@ public class LockScreenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        from_unvisible = AnimationUtils.loadAnimation(this,R.anim.lockscreen_fromunvisible);
+        from_visible = AnimationUtils.loadAnimation(this,R.anim.lockscreen_fromvisible);
 
 
-
+        QuestionInitializer.initializeQuestions();
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
@@ -109,6 +161,9 @@ public class LockScreenActivity extends Activity {
         tv_time = (TextView) findViewById(R.id.tv_time);
         tv_time.setText(TimeUtil.getTime());
 
+
+
+
         iv_key.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
             @Override
             public void onSlideComplete(SlideToActView slideToActView) {
@@ -125,38 +180,149 @@ public class LockScreenActivity extends Activity {
             e.printStackTrace();
         }
 
-                    mainContainer = (RelativeLayout) findViewById(R.id.mainContainer);
-                    categoryInfoContainer = (LinearLayout) findViewById(R.id.categoryInfoContainer);
-                    categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
-                    questionTitleText = (TextView) findViewById(R.id.questionTitleText);
-                    questionDescriptionText = (TextView) findViewById(R.id.questionDescriptionText);
+        mainContainer = (RelativeLayout) findViewById(R.id.mainContainer);
+        categoryInfoContainer = (LinearLayout) findViewById(R.id.categoryInfoContainer);
+        categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
+        questionTitleText = (TextView) findViewById(R.id.questionTitleText);
+        questionDescriptionText = (TextView) findViewById(R.id.questionDescriptionText);
 
 
-                    categoryInfoContainer.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent sharedIntent = new Intent(LockScreenActivity.this, SharedActivity.class);
+        insideContainer = findViewById(R.id.insideContainer);
+        insideContainer.setLayoutParams(new RelativeLayout.LayoutParams(0,0));
+
+        categoryInfoContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insideContainer.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+                insideContainer.startAnimation(from_unvisible);
 
 
-                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                                Pair[] pairs = new Pair[4];
-                                pairs[0] = Pair.create((View)categoryImageView, "categoryImageQuestionTransition");
-                                pairs[1]= Pair.create((View)questionTitleText, "questionTitleTransition");
-                                pairs[2] = Pair.create((View)questionDescriptionText, "questionDescriptionTransition");
-                                pairs[3] = Pair.create((View)mainContainer, "containerTransition");
+
+                if(false){
+                    Intent sharedIntent = new Intent(LockScreenActivity.this, SharedActivity.class);
 
 
-                                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LockScreenActivity.this);
-                                startActivity(sharedIntent, options.toBundle());
-                            }
-                            else{
-                                startActivity(sharedIntent);
-                            }
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        Pair[] pairs = new Pair[4];
+                        pairs[0] = Pair.create((View)categoryImageView, "categoryImageQuestionTransition");
+                        pairs[1]= Pair.create((View)questionTitleText, "questionTitleTransition");
+                        pairs[2] = Pair.create((View)questionDescriptionText, "questionDescriptionTransition");
+                        pairs[3] = Pair.create((View)mainContainer, "containerTransition");
 
 
-                        }
-                    });
+                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LockScreenActivity.this);
+                        startActivity(sharedIntent, options.toBundle());
+                    }
+                    else{
+                        startActivity(sharedIntent);
+                    }
+
+                }
+
+            }
+        });
+
+        left_key = (ImageView) findViewById(R.id.left_key);
+        right_key = (ImageView) findViewById(R.id.right_key);
+
+        left_key.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                previousQuestion();
+
+            }
+        });
+
+        right_key.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextQuestion();
+            }
+        });
+
+        //Set Current question to view
+        setQuestionView(QuestionInitializer.getCurrentQuestion());
+
+
+        insideContinueSlideAction_key = (SlideToActView) findViewById(R.id.insideContinueSlideAction_key);
+        insideContinueSlideAction_key.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
+
+            @Override
+            public void onSlideComplete(SlideToActView slideToActView) {
+                nextQuestion();
+                insideContinueSlideAction_key.resetSlider();
+                insideContainer = findViewById(R.id.insideContainer);
+                insideContainer.startAnimation(from_visible);
+            }
+        });
+
+        insideExitSlideAction_key = (SlideToActView) findViewById(R.id.insideExitSlideAction_key);
+        insideExitSlideAction_key.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
+
+            @Override
+            public void onSlideComplete(SlideToActView slideToActView) {
+                insideExitSlideAction_key.resetSlider();
+                insideContainer = findViewById(R.id.insideContainer);
+                insideContainer.startAnimation(from_visible);
+            }
+        });
+
+
+        from_visible.setAnimationListener(new Animation.AnimationListener(){
+            @Override
+            public void onAnimationStart(Animation arg0) {
+            }
+            @Override
+            public void onAnimationRepeat(Animation arg0) {
+            }
+            @Override
+            public void onAnimationEnd(Animation arg0) {
+                insideContainer.setLayoutParams(new RelativeLayout.LayoutParams(0,0));
+            }
+        });
+
+        }
+
+
+    private void nextQuestion() {
+        // TODO: get next Question
+        Question next_question = QuestionInitializer.getNextQuestion();
+        setQuestionView(next_question);
+
     }
+
+    private void previousQuestion() {
+        //TODO : get previous Question
+        Question previous_question = QuestionInitializer.getPreviousQuestion();
+        setQuestionView(previous_question);
+    }
+
+    private void setQuestionView(Question question) {
+        mainContainer = (RelativeLayout) findViewById(R.id.mainContainer);
+        categoryInfoContainer = (LinearLayout) findViewById(R.id.categoryInfoContainer);
+        categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
+        questionTitleText = (TextView) findViewById(R.id.questionTitleText);
+        questionDescriptionText = (TextView) findViewById(R.id.questionDescriptionText);
+
+        Random randomColor = new Random();
+        int randomColorNumber = randomColor.nextInt(colours.length);
+        int backgroudColor = Color.parseColor(colours[randomColorNumber]);
+
+        mainContainer.setBackgroundColor(backgroudColor);
+
+        questionTitleText.setText(question.getTitle());
+        questionDescriptionText.setText(question.getDescription());
+
+        insideContainer = findViewById(R.id.insideContainer);
+        categoryImageViewInside = findViewById(R.id.categoryImageViewInside);
+        questionTitleTextInside = findViewById(R.id.questionTitleTextInside);
+        questionDescriptionTextInside = findViewById(R.id.questionDescriptionTextInside);
+
+        questionTitleTextInside.setText(question.getTitle());
+        questionDescriptionTextInside.setText(question.getDescription());
+
+    }
+
 
     @Override
     protected void onPause() {
