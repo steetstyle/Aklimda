@@ -72,9 +72,10 @@ public class IntroActivity extends AppCompatActivity {
         // fill list screen
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Fresh Food","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.img1));
-        mList.add(new ScreenItem("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.img2));
-        mList.add(new ScreenItem("Easy Payment","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.img3));
+        mList.add(new ScreenItem("Dinamik Öğrenme","Aklımda, kilit ekranınıza her baktığınızda eğlenceli ve dinamik bir şekilde bilgiyi öğrenmek için bir eğitim uygulamasıdır.",R.drawable.img1));
+        mList.add(new ScreenItem("Bilgiyi Kalıcılaştır","Aklımda'nın çalışma şekli çok basit ve sezgiseldir, akıllı telefonunuzun kilidini her açtığınızda, öğrendiklerinizi hatırlayıp yeni bir bilgi öğrenip kendinizi geliştireceksiniz",R.drawable.img2));
+        mList.add(new ScreenItem("Sürekli Bilgi","\n" +
+                "Her gün bilginizi eğlenceli bir şekilde kalıcı hale getirmek istiyorsanız, Aklımda zamanınızı ve çabanızı boşa harcamadan bunu yapmak için harika bir uygulamadır.",R.drawable.img3));
 
         // setup viewpager
         screenPager = (ViewPager) findViewById(R.id.screen_viewpager);

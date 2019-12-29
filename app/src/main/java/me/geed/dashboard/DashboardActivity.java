@@ -81,8 +81,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         }
 
-
-
         rareItemsTitle = (TextView) findViewById(R.id.rareItemsTitle);
         rareItemsTitle.startAnimation(frombottomtop);
 
@@ -92,7 +90,14 @@ public class DashboardActivity extends AppCompatActivity {
 
         for (LessonCategory lesson : API.getLessonCategories()) {
             final View v = layoutInflater.inflate(R.layout.layout_rare_item, null);
+            ImageView rareItemImageView = (ImageView) v.findViewById(R.id.rareItemImageView);
+            TextView rareItemTitle = (TextView) v.findViewById(R.id.rareItemTitle);
+
+            rareItemImageView.setImageResource(lesson.getScreenImg());
+            rareItemTitle.setText(lesson.getTitle());
+
             rareItemsLayout.addView(v);
+
         }
 
         for (int i = 0; i < API.getLessonCategories().size(); i++) {

@@ -65,8 +65,8 @@
                 />
 
             <LinearLayout
+                android:id="@+id/categoryInfoContainerBox"
                 android:layout_below="@id/category_tip"
-                android:id="@+id/categoryInfoContainer"
                 android:layout_marginTop="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -75,14 +75,16 @@
                 android:padding="20dp"
                 android:elevation="1dp"
                 android:background="@drawable/roundededge"
-
                 >
+
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     >
                     <LinearLayout
+                        android:id="@+id/categoryInfoContainer"
                         android:layout_width="match_parent"
+                        android:minHeight="75dp"
                         android:layout_height="match_parent"
 
                         android:orientation="vertical">
@@ -130,7 +132,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_below="@id/categoryInfoContainer"
+                android:layout_below="@id/categoryInfoContainerBox"
                 android:textSize="13dp"
                 />
 
@@ -150,7 +152,8 @@
                     android:layout_height="45dp"
                     android:src="@drawable/leftarrow"
                     android:layout_marginTop="3dp"
-                    android:layout_marginLeft="50dp"/>
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="5dp"/>
 
                 <com.ncorti.slidetoact.SlideToActView
                     android:id="@+id/iv_key"
@@ -174,19 +177,20 @@
                     android:layout_height="45dp"
                     android:src="@drawable/rightarrow"
                     android:layout_marginTop="3dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_marginRight="50dp"/>
 
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:orientation="vertical"
-        android:background="@color/white"
-            android:id="@+id/insideContainer"
-        >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:background="@color/white"
+                android:id="@+id/insideContainer"
+            >
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -283,9 +287,8 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
-
-
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/sliderContainer"
             android:layout_alignParentBottom="true"
@@ -305,7 +308,7 @@
                 app:slider_height="50dp"
                 app:slider_locked="false"
                 app:text="Kapat"
-                app:text_size="12sp" />
+                app:text_size="9sp" />
             <View
                 android:layout_width="50dp"
                 android:layout_height="1dp"/>
@@ -323,7 +326,7 @@
                 app:slider_height="50dp"
                 app:slider_locked="false"
                 app:text="Sonraki Bilgi"
-                app:text_size="12sp" />
+                app:text_size="9sp" />
 
         </LinearLayout>
 
